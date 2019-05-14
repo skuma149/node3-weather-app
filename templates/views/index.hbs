@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<title>
+
+</title>
+
+<head>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="main-content">
+
+        {{>header}}
+
+        <p>{{message}}</p>
+        <form>
+            <input placeholder="enter location">
+            <button type="submit">Submit</button>
+        </form>
+        <p id="error-msg">
+        </p>
+        <p id="forecast"></p>
+        <p id="location"></p>
+    </div>
+{{>footer}}
+<script src="/js/app.js"></script>
+</body>
+
+</html>
