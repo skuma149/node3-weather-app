@@ -49,14 +49,14 @@ app.get('/weather',(req,res)=>{
         if(error){
             return res.send({error})
         }
-        const {latitude,longitude} = data
+        const {latitude,longitude,location} = data
          geo.getForecast(latitude,longitude,(error,data)=>{
              if(error){
                  return res.send({error})
              }
              res.send({
                  forecast:data,
-                 location:inputAddress
+                 location:location
              })
          })
      })
