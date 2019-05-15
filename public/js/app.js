@@ -12,7 +12,7 @@ let locationElem = document.querySelector("#location")
 formElement.addEventListener('submit',(e)=>{
 e.preventDefault()
 
-fetch('http://localhost:3000/weather?address='+inputLocation.value).then((response)=>{
+fetch('/weather?address='+inputLocation.value).then((response)=>{
     errMsgElem.textContent='',forecastElem.textContent='',locationElem.textContent='';
     response.json().then((data)=>{
             if(data.error){

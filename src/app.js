@@ -2,12 +2,14 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const geo  = require('./utility')
+const app = express()
+
+const port = process.env.PORT || 3000
 
 //Define paths
 const staticDirPath = path.join(__dirname,'../public')
 const dynamicDirPath = path.join(__dirname,'../templates/views')
 const partialPath = path.join(__dirname,'../templates/partials')
-const app = express()
 //set hbs
 app.set('view engine','hbs')
 app.set('views',dynamicDirPath)
@@ -76,6 +78,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('Server is up running on port 3000')
+app.listen(port,()=>{
+    console.log('Server is up running on port '+port)
 })
